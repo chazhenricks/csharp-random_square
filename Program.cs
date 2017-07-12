@@ -33,6 +33,12 @@ namespace random_square
                 Console.WriteLine(num);
             }
 
+            for (int i = squaredNums.Count -1; i >= 0; i--){
+                if(squaredNums[i] % 2 != 0){
+                    squaredNums.Remove(squaredNums[i]);
+                }
+            }
+
             foreach(int num in squaredNums){
                 if(num % 2 == 0){
                    noOdds.Add(num); 
@@ -41,9 +47,10 @@ namespace random_square
 
             Console.WriteLine(" ");
             Console.WriteLine("List of the Squared random numbers with all odd numbers removed");
-            foreach(int num in noOdds){
+            foreach(int num in squaredNums){
                 Console.WriteLine(num);
             }
+
         }
     }
 }
